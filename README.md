@@ -14,3 +14,14 @@
    $ curl -fsSL https://get.docker.com -o get-docker.sh
    $ sudo sh get-docker.sh
    ```
+
+- Validation :
+  - Service Linux systemd : 
+     ```bash
+     $ sudo systemctl status docker
+     ```
+
+  - Client docker :
+    ```bash
+    $ docker --help
+    ```
