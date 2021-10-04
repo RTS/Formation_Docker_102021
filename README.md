@@ -68,8 +68,17 @@ $ sudo network ls
    ```bash
    $ sudo docker container --help
    $ sudo docker container run ubuntu
+   ```
+
+   > Par défaut un conteneur s'instancie, exécute la commande prévue par l'image et s'arrête si plus de processus à l'intérieur
+
+
+   ```
    $ sudo docker container run nginx:1.18-alpine
    ```
+
+   > Un conteneur basé sur image applicative, déclenche un processus actif et donc reste "up"
+
 
 - Les options sont à ajouter à l'instanciation du conteneur (après pas possible de modfier l'objet, il faudra en recréer un)
 
