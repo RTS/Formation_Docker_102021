@@ -86,3 +86,18 @@ $ sudo network ls
     ```bash
     $ sudo docker container run -d -P nginx:1.18-alpine
     ```
+
+- Commandes de troubleshooting :
+
+```bash
+$ sudo docker container logs {ID/NAME}
+$ sudo docker container exec {ID/NAME} COMMANDE
+$ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
+```
+
+
+## Ressource de type volume
+
+- Persister les données en dehors du conteneur, car par défaut un conteneur écrit dans une R/W layer qui ne dure que pendant le cycle de vie du conteneur (sera effacée à la destruction du conteneur)
+
+- https://docs.docker.com/storage/volumes/
