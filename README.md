@@ -101,3 +101,8 @@ $ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
 - Persister les données en dehors du conteneur, car par défaut un conteneur écrit dans une R/W layer qui ne dure que pendant le cycle de vie du conteneur (sera effacée à la destruction du conteneur)
 
 - https://docs.docker.com/storage/volumes/
+
+- Deux type : bind et volume
+
+    - Bind/mount : c'est un répertoire présent sur le docker hote et vu au sens OS
+    - Volume     : c'est une ressource créée dans docker et vu par docker comme objet

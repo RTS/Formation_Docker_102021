@@ -33,12 +33,12 @@ Sortez ensuite du container.
 
 Lors de la création du container, une layer read-write est ajoutée au dessus des layers read-
 only de l’image sous jacente. C’est dans cette layer que les changements que nous avons
-apportés dans le container ont étés persistés (création du fichier /usr/share/nginx/html/index.html). 
+apportés dans le container ont été persistés (création du fichier /usr/share/nginx/html/index.html). 
 
 Nous allons voir comment cette layer est accessible depuis la machine hôte (celle sur laquelle tourne le
 daemon Docker) et vérifier que nos modifications sont bien présentes.
 
-Utilisez la command inspect pour obtenir le path de la layer du container c1. 
+Utilisez la commande inspect pour obtenir le path de la layer du container web01. 
 
 La clé qui nous intéresse est GraphDriver.
 
