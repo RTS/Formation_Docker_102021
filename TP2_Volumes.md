@@ -76,7 +76,7 @@ référencé par UpperDir.
 $ CONTAINER_LAYER_PATH=$(sudo docker container inspect -f "{{ json
 .GraphDriver.Data.UpperDir }}" web01| tr -d '"')
 $ sudo find $CONTAINER_LAYER_PATH -name index.html
-/var/lib/docker/overlay2/d0ffe7...1d66/diff/data/hello.txt
+/var/lib/docker/overlay2/d0ffe7...1d66/diff/data/index.html
 ```
 
 
@@ -88,8 +88,7 @@ $ sudo ls $CONTAINER_LAYER_PATH
 ls: cannot access '/var/lib/docker/overlay2/d0ffe7...1d66/diff': No such file or directory
 ```
 
-Cela montre que les données créées dans le container ne sont pas persistées et sont
-supprimées avec le container.
+Cela montre que les données créées dans le container ne sont pas persistées et sont supprimées avec le container.
 
 Si on réinstancie un conteneur on repart de l'image de base.
 
