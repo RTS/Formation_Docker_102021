@@ -53,4 +53,27 @@ $ sudo network ls
    > https://hub.docker.com/
 
 
-- Utilisation d'image officielle 
+- Utilisation d'image officielle
+
+  ```bash
+  $ sudo docker image pull {NOM_IMAGE}
+  ```
+
+  > Par défaut, si l'on ne spécifie pas de tag : docker ajoute le tag ":latest" à l'image
+
+## Ressources de type conteneur
+
+- On instancie un conteneur à partir d'une image (et son tag)
+
+   ```bash
+   $ sudo docker container --help
+   $ sudo docker container run ubuntu
+   $ sudo docker container run nginx:1.18-alpine
+   ```
+
+- Les options sont à ajouter à l'instanciation du conteneur (après pas possible de modfier l'objet, il faudra en recréer un)
+
+    - Ex : mode background et publication d'un port (pour accès depuis l'extérieur)
+    ```bash
+    $ sudo docker container run -d -P nginx:1.18-alpine
+    ```
