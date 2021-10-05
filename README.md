@@ -170,3 +170,29 @@ $ sudo docker network inspect bridge
 2. Utilisation : docker-compose file
 
 > https://docs.docker.com/compose/compose-file/
+
+
+3. Déclenchement 
+
+```bash
+$ sudo docker-compose up
+$ sudo docker-compose up -d
+$ sudo docker-compose -f chemin/fichier-compose.yaml -d 
+```
+
+4. Troubleshooting
+
+```bash
+$ sudo docker-compose ps
+$ sudo docker-compose logs
+$ sudo docker-compose top
+```
+
+5. Cycle de vie 
+
+```bash
+$ sudo docker-compose stop
+$ sudo docker-compose start
+$ sudo docker-compose down
+$ sudo docker-compose down -v
+```
