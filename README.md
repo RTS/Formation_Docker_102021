@@ -106,3 +106,13 @@ $ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
 
     - Bind/mount : c'est un répertoire présent sur le docker hote et vu au sens OS
     - Volume     : c'est une ressource créée dans docker et vu par docker comme objet
+
+
+- On peut créer des volume avec des options : driver (local mais pas que), option :
+
+   > https://docs.docker.com/engine/reference/commandline/volume_create/
+
+
+## Ressource de type network
+
+> https://docs.docker.com/network/
