@@ -128,3 +128,13 @@ $ sudo docker network inspect bridge
 
    - Historiquement : link /!\ LEGACY : https://docs.docker.com/network/links/
    - User-defined : https://docs.docker.com/network/bridge/
+
+
+## Loggind docker
+
+- Par défaut, docker utilise le drive json-log pour stocker les logs générées par les output des applis des conteneurs
+
+- On peut modifier le logging driver au niveau de la conf globale du docker hôte ou par conteneur à l'instanciation :
+
+   > https://docs.docker.com/config/containers/logging/configure/#configure-the-default-logging-driver
+   > https://docs.docker.com/config/containers/logging/configure/#configure-the-logging-driver-for-a-container
