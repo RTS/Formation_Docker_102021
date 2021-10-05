@@ -138,3 +138,25 @@ $ sudo docker network inspect bridge
 
    > https://docs.docker.com/config/containers/logging/configure/#configure-the-default-logging-driver
    > https://docs.docker.com/config/containers/logging/configure/#configure-the-logging-driver-for-a-container
+
+
+
+## Industrialisation : docker-compose
+
+> https://docs.docker.com/compose/
+
+1. Installer le binaire docker-compose
+
+   > https://docs.docker.com/compose/install/
+
+   - Téléchargement du binaire :
+
+     ```bash
+     $ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+     ```
+
+   - Positionnement des droits d'exécution :
+
+     ```bash
+     $ sudo chmod +x /usr/local/bin/docker-compose
+     ```
