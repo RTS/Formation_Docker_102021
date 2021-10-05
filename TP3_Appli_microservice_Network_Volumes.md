@@ -15,6 +15,9 @@ Le but de ce TP est d'assimiler les objets docker (image, container, network et 
 1) S'assurer que le réseau **mynetwork** soit créé
   - type : bridge
 
+```bash
+$ sudo docker network create mynetwork
+```
 
 ## Création d'un micro service de type php - nginx:
 
@@ -29,6 +32,12 @@ Le but de ce TP est d'assimiler les objets docker (image, container, network et 
 
 2) Vérifier le contenu dans le conteneur php
 
+```bash
+$ sudo docker container ls
+$ sudo docker container logs myphp
+$ sudo docker container exec myphp cat /srv/http/index.php
+```
+
 3) Créer le conteneur mynginx avec les paramètres suivants :
 
   - name: mynginx
@@ -39,6 +48,10 @@ Le but de ce TP est d'assimiler les objets docker (image, container, network et 
   - publication port : {port_docker_hote}:80
   - image : nginx:1.20-alpine
 
+```bash
+$ sudo docker container run --name mynginx -p 8085:80 -d --network mynetwork -v /vagrant/TP_Appli_microservice/conf/default.conf:/etc/nginx/conf.d/default.conf nginx:1.20-alpine
+```
+
 3) Test navigateur :
 
 > http://ip_docker_hote:{port_docker_hôte}/index.php
@@ -48,3 +61,5 @@ Le but de ce TP est d'assimiler les objets docker (image, container, network et 
 - On demande de passer en version php 7.4
 
   - Quel procédure est à adopter ?
+
+
