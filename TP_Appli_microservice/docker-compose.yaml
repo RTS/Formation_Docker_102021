@@ -34,4 +34,5 @@ networks:
 
 volumes:
   mybdd:
+    # Utilisation d'une ressource externe -> deja presente sur le docker hote
     external: true

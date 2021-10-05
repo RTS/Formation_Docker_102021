@@ -1,0 +1,15 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    volumes:
+      # Bind sur la socket docker daemon (permet de voir les events et objets docker)
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Volume mount pour pereniser les données de l'appli
+      - portainer_data:/data
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    restart: always
+
+volumes:
+  portainer_data:
