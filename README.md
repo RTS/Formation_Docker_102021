@@ -116,3 +116,8 @@ $ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
 ## Ressource de type network
 
 > https://docs.docker.com/network/
+
+```bash
+$ sudo docker network ls
+$ sudo docker network inspect bridge
+```
