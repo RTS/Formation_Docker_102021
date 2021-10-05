@@ -86,6 +86,9 @@ $ sudo docker image pull mariadb:10.5
   - variable d'environnement : MARIADB_ROOT_PASSWORD=roottoor
   - image : mariadb:10.5
 
+```bash
+$ sudo docker container run -d --name mybdd --network mynetwork -e MARIADB_ROOT_PASSWORD=roottoor mariadb:10.5
+```
 
 3. Test bdd :
 
@@ -119,9 +122,24 @@ MariaDB [(none)]> exit
 
 4. Analyser les objet de type volume
 
-    - Que contatez-vous ?
+```bash
+$ sudo docker volume ls
+```
+
+  - Que contatez-vous ?
+
+       - Des volumes anonymes ont été générés => prévue dans l'image
+       - Mal maitrisé
 
 5. Détruire et réinstancier le conteneur mybdd en précisant un volume mybdd vers /var/lib/mysql du conteneur
+
+```bash
+$ sudo docker container rm -f mybdd
+$ sudo docker container run -d --name mybdd --network mynetwork -e MARIADB_ROOT_PASSWORD=roottoor -v mybdd:/var/lib/mysql mariadb:10.5
+$ sudo docker volume ls
+$ sudo docker volume inspect mybdd
+$ sudo ls -l /var/lib/docker/volumes/mybdd/_data
+```
 
 6. Valider le fonctionnement et le volume
 
@@ -136,7 +154,20 @@ MariaDB [(none)]> exit
 
   - Que pouvons nous faire pour debugger rapidement ?
 
-     ```docker-php-ext-install pdo pdo_mysql```
+    - Se connecter dans le conteneur myphp pour essayer d'ajouter l'extension :
+
+      ```bash
+      $ sudo docker container exec -it myphp bash
+      # docker-php-ext-install pdo pdo_mysql
+      ```
+
+    - Il est nécessaire de restart le process php : 
+
+        - Comment ? On restart le conteneur
+
+        ```bash
+        $ sudo docker container restart myphp
+        ```
 
 
 
