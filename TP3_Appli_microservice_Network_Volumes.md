@@ -72,6 +72,8 @@ $ sudo docker container run --name mynginx -p 8085:80 -d --network mynetwork -v 
 
 1. Analyser la doc docker hub pour mariadb et télécharger l'image :
 
+> https://hub.docker.com/_/mariadb
+
 ```bash
 $ sudo docker image pull mariadb:10.5
 ```
@@ -133,6 +135,8 @@ MariaDB [(none)]> exit
 2. Il manque les extensions pdo pdo_mysql dans le conteneur myphp
 
   - Que pouvons nous faire pour debugger rapidement ?
+
+     ```docker-php-ext-install pdo pdo_mysql```
 
 
 
