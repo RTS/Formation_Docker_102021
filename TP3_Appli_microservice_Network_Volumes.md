@@ -67,3 +67,74 @@ $ sudo docker container run --name mynginx -p 8085:80 -d --network mynetwork -v 
   ```
 
 
+## Ajout mariadb
+
+
+1. Analyser la doc docker hub pour mariadb et télécharger l'image :
+
+```bash
+$ sudo docker image pull mariadb:10.5
+```
+
+2. Créer le conteneur mybdd avec les paramètres suivants :
+
+  - name: mybdd
+  - detach
+  - network : mynetwork
+  - variable d'environnement : MARIADB_ROOT_PASSWORD=roottoor
+  - image : mariadb:10.5
+
+
+3. Test bdd :
+
+```bash
+$ sudo docker container exec -it mybdd bash
+root@d8ac4f4ccb4a:/# 
+root@d8ac4f4ccb4a:/# 
+root@d8ac4f4ccb4a:/# mysql -u root -proottoor
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.5.12-MariaDB-1:10.5.12+maria~focal mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [(none)]> exit
+
+# exit
+```
+
+4. Analyser les objet de type volume
+
+    - Que contatez-vous ?
+
+5. Détruire et réinstancier le conteneur mybdd en précisant un volume mybdd vers /var/lib/mysql du conteneur
+
+6. Valider le fonctionnement et le volume
+
+
+## Modification code php pour jointure vers mybdd
+
+1. Ajouter le contenu du code php dans index.php
+
+  - Tester l'URL
+
+2. Il manque les extensions pdo pdo_mysql dans le conteneur myphp
+
+  - Que pouvons nous faire pour debugger rapidement ?
+
+
+
+
+
