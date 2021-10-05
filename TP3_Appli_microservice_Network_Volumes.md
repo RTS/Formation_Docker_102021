@@ -54,12 +54,16 @@ $ sudo docker container run --name mynginx -p 8085:80 -d --network mynetwork -v 
 
 3) Test navigateur :
 
-> http://ip_docker_hote:{port_docker_hôte}/index.php
+> http://ip_docker_hote:{port_docker_hôte}
 
 ## Mise à jour d'un micro-service (mise à jour version)
 
 - On demande de passer en version php 7.4
 
-  - Quel procédure est à adopter ?
+  - Quel procédure est à adopter ? Il faut détruire l'instance conteneur myphp et le réinstancier avec changement de verison d'image
+
+  ```bash
+  $ sudo docker container run --name myphp -d --network mynetwork -v /vagrant/TP_Appli_microservice/php/:/srv/http/ php:7.4.24-fpm
+  ```
 
 
