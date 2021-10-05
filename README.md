@@ -111,6 +111,8 @@ $ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
 - On peut créer des volume avec des options : driver (local mais pas que), option :
 
    > https://docs.docker.com/engine/reference/commandline/volume_create/
+   > https://docs.docker.com/engine/extend/legacy_plugins/
+   > https://docs.docker.com/engine/extend/
 
 
 ## Ressource de type network
@@ -121,3 +123,8 @@ $ sudo docker container exec -it {ID/NAME} "/bin/sh ou /bin/bash"
 $ sudo docker network ls
 $ sudo docker network inspect bridge
 ```
+
+- Mise en réseau des conteneurs :
+
+   - Historiquement : link /!\ LEGACY : https://docs.docker.com/network/links/
+   - User-defined : https://docs.docker.com/network/bridge/
