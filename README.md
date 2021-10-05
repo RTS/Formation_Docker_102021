@@ -130,7 +130,7 @@ $ sudo docker network inspect bridge
    - User-defined : https://docs.docker.com/network/bridge/
 
 
-## Loggind docker
+## Logging docker
 
 - Par défaut, docker utilise le drive json-log pour stocker les logs générées par les output des applis des conteneurs
 
