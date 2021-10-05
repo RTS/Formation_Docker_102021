@@ -171,6 +171,8 @@ $ sudo docker network inspect bridge
 
 > https://docs.docker.com/compose/compose-file/
 
+> Voir le TP finale dans TP_Appli_microservice
+
 
 3. Déclenchement 
 

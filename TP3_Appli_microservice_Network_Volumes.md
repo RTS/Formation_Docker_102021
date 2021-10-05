@@ -165,6 +165,12 @@ $ sudo ls -l /var/lib/docker/volumes/mybdd/_data
       # docker-php-ext-install pdo pdo_mysql
       ```
 
+      ou
+
+      ```bash
+      $ sudo docker container exec myphp docker-php-ext-install pdo pdo_mysql
+      ```
+
     - Il est nécessaire de restart le process php : 
 
         - Comment ? On restart le conteneur
@@ -185,7 +191,7 @@ $ sudo docker container diff myphp
 - On peut fusionner la R/W layer dans une nouvelle image au travers d'un commit :
 
 ```bash
-$ sudo docker container stop myph
+$ sudo docker container stop myphp
 $ sudo docker container commit -a Pierre -m "Ajout extension PDO" myphp php:7.4.24-fpm-pdo
 $ sudo docker image ls
 ```

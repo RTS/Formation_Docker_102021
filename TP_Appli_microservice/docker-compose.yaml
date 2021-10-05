@@ -10,7 +10,7 @@ services:
       - "8080:80"
 
   myphp:
-    image: php:7.4.24-fpm-pdo
+    image: php:7.4-pdo
     container_name: myphp
     volumes:
       - ./php/:/srv/http/
@@ -22,7 +22,7 @@ services:
     image: mariadb:10.5
     container_name: mybdd
     volumes:
-      - mybdd:/var/lib/docker
+      - mybdd:/var/lib/mysql
     networks:
       - mynetwork-back
     environment:
@@ -34,3 +34,5 @@ networks:
 
 volumes:
   mybdd:
+    external: true
+    #name: mybdd
