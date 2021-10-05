@@ -207,3 +207,13 @@ $ sudo docker-compose down -v
       $ sudo docker-compose -p appli up -d
       $ sudo docker-compose -p appli ps
       ```
+
+7. Ressources externes
+
+   - Il est possible de préciser au docker-compose qu'il doit utiliser des ressources déjà créées (ne pas créer de nouvelle ressources)
+
+   > CF docker-compose TP_Appli_microservice
+   
+      ```yaml
+      external: true
+      ```
