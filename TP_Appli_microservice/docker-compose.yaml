@@ -5,7 +5,7 @@ services:
     volumes:
       - ./conf/default.conf:/etc/nginx/conf.d/default.conf
     networks:
-      - mynetwork
+      - mynetwork-front
     ports:
       - "8080:80"
 
@@ -15,7 +15,8 @@ services:
     volumes:
       - ./php/:/srv/http/
     networks:
-      - mynetwork
+      - mynetwork-front
+      - mynetwork-back
 
   mybdd:
     image: mariadb:10.5
@@ -23,12 +24,13 @@ services:
     volumes:
       - mybdd:/var/lib/docker
     networks:
-      - mynetwork
+      - mynetwork-back
     environment:
       MARIADB_ROOT_PASSWORD: roottoor
 
 networks:
-  mynetwork:
+  mynetwork-front:
+  mynetwork-back:
 
 volumes:
   mybdd:

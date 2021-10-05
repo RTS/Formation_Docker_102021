@@ -196,3 +196,12 @@ $ sudo docker-compose start
 $ sudo docker-compose down
 $ sudo docker-compose down -v
 ```
+
+6. Project name
+
+   - Par defaut, docker-compose prefix les nom des ressource par un nom de projet : le répertoire qui contient le docker-compose
+   - On peut le modifier :
+      ```bash
+      $ sudo docker-compose -p appli up -d
+      $ sudo docker-compose -p appli ps
+      ```
