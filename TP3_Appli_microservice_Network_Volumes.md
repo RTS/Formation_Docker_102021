@@ -170,6 +170,19 @@ $ sudo ls -l /var/lib/docker/volumes/mybdd/_data
         ```
 
 
+## Fusion de la layer R/W du conteneur pour conserver nos modifs => méthode rapide mais non industrielle
 
+- On peut visualiser les différence entre le contenu de l'image et la layer R/W du conteneur
 
+```bash
+$ sudo docker container diff myphp
+```
+
+- On peut fusionner la R/W layer dans une nouvelle image au travers d'un commit :
+
+```bash
+$ sudo docker container stop myph
+$ sudo docker container commit -a Pierre -m "Ajout extension PDO" myphp php:7.4.24-fpm-pdo
+$ sudo docker image ls
+```
 
