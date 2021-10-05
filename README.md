@@ -160,3 +160,13 @@ $ sudo docker network inspect bridge
      ```bash
      $ sudo chmod +x /usr/local/bin/docker-compose
      ```
+
+   - Test binaire :
+
+     ```bash
+     $ docker-compose version
+     ```
+
+2. Utilisation : docker-compose file
+
+> https://docs.docker.com/compose/compose-file/
