@@ -30,6 +30,10 @@ $ sudo docker network create mynetwork
       -v /vagrant/TP_Appli_microservice/php:/srv/http
   - image : php:7.3.31-fpm
 
+```bash
+$ sudo docker container run --name myphp -d --network mynetwork -v /vagrant/TP_Appli_microservice/php/:/srv/http/ php:7.3.31-fpm
+```
+
 2) Vérifier le contenu dans le conteneur php
 
 ```bash

@@ -1,0 +1,9 @@
+services:
+  nginx01:
+    #container_name: nginx01
+    image: nginx:1.20-alpine
+    ports:
+      - "8086:80"
+  alpine01:
+    image: alpine
+    container_name: alpine02
