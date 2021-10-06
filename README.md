@@ -242,3 +242,29 @@ $ sudo docker-compose down -v
 
    > https://github.com/aquasecurity/trivy
    > https://hub.docker.com/r/aquasec/trivy/
+
+
+## Concept de REGISTRY privée (cloud - réseau local)
+
+- On parle de container registry : plusieurs solutions autre que docker
+
+- Solution fournie par docker :
+   > https://docs.docker.com/registry/
+
+      - Ex : 
+        - 1. déploiement registry docker en local
+        ```bash
+        $ sudo docker run -d -p 5000:5000 --name registry -v vol_registry:/var/lib/registry  registry:2
+        $ curl http://localhost:5000/v2/_catalog
+        ```
+        - 2. Tag d'une image du docker hote local avec nom DNS de la registry
+        ```bash
+        $ sudo docker image tag php:7.4-pdo localhost:5000/php:7.4-pdo
+        ```
+        - 3. Push de l'image avec son tag qui fait référence à la registry
+        ```bash
+        $ sudo docker image push localhost:5000/php:7.4-pdo
+        $ curl http://localhost:5000/v2/_catalog
+        ```
+
+- Solution Gitlab : 
