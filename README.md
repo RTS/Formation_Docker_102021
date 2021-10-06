@@ -288,5 +288,56 @@ $ sudo docker-compose down -v
       ```
 
 
-- Solution cloud provier, solution Harbor (cncf)
+- Solution cloud provier, solution Harbor (cncf) ,http://port.us.org/
   - apporte des fonctionnalités de contrôle, de scan, de gestion de comptes....
+
+
+
+## Orchestrateur Docker SWARM
+
+> https://docs.docker.com/engine/swarm/
+
+> https://docs.docker.com/get-started/swarm-deploy/
+
+- Initialisation :
+
+```bash
+$ sudo docker swarm init --advertise-addr 172.28.128.99
+```
+
+- Ajout node type worker (commande à lancer sur le future node worker)
+
+```bash
+$ sudo docker node ls
+```
+
+- Sur manager :
+
+```bash
+$ sudo docker node ls
+```
+
+- Deploiement Stack 
+
+``bash
+$ sudo docker stack deploy -c Demo_Swarm/portainer/portainer-stack.yaml stack_portainer
+sudo docker stack deploy -c Demo_Swarm/web/nginx-stack.yaml stack_nginx```
+
+- Une stack 1 ou N service
+
+```bash
+$ sudo docker service ls
+$ sudo docker stack ls
+$ sudo docker stack ls
+$ sudo docker service ls
+$ sudo docker node ps
+$ sudo docker node ps node2
+$ sudo docker stack --help
+$ sudo docker service --help
+$ sudo docker service update --help
+$ sudo docker service update --image nginx:1.19-alpine stack_nginx_nginx
+sudo docker node ps node2
+sudo docker service --help
+sudo docker service rollback stack_nginx_nginx
+sudo docker node ps node2
+```
