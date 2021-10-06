@@ -267,4 +267,23 @@ $ sudo docker-compose down -v
         $ curl http://localhost:5000/v2/_catalog
         ```
 
-- Solution Gitlab : 
+- Solution Gitlab : (registry privée avec contrôle d'accès)
+
+   - 1. Login
+
+        ```bash
+        $ sudo docker login registry.gitlab.com
+        ```
+
+   - 2. TAG de l'image (ou build directement avec le bon tag)
+       
+       ```bash
+       $ sudo docker image tag alpine:latest registry.gitlab.com/pierre.sable/docker_102021/myalpine:latest
+       ```
+
+   - 3. Push 
+
+      ```bash
+      $ sudo docker image push registry.gitlab.com/pierre.sable/docker_102021/myalpine:latest
+      ```
+
