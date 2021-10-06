@@ -20,4 +20,9 @@ RUN curl -O -L https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
 
 EXPOSE 8080
 
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+# ENTRYPOINT : binaire/script exécuté par défaut (peut tout de même être surchargé lors de l'instanciation
+# du conteneur avec l'option --entrypoint )
+ENTRYPOINT [ "/opt/tomcat/bin/catalina.sh" ]
+
+# Devient l'argument derrière la commande entrypoint (peut être surchargé à l'instanciation du contenur : méthode classique)
+CMD [ "run" ]
