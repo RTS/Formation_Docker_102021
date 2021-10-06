@@ -287,3 +287,6 @@ $ sudo docker-compose down -v
       $ sudo docker image push registry.gitlab.com/pierre.sable/docker_102021/myalpine:latest
       ```
 
+
+- Solution cloud provier, solution Harbor (cncf)
+  - apporte des fonctionnalités de contrôle, de scan, de gestion de comptes....
