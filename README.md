@@ -222,3 +222,17 @@ $ sudo docker-compose down -v
 ## Les images construites par DOCKERFILE : build
 
 > https://docs.docker.com/engine/reference/builder/
+
+- Fichier Dockerfile, on part d'une image de base et on ajoute des instructions
+   - cf TP_Dockerfile
+
+- Commande de build :
+
+   ```bash
+   $ docker image build -t nom_image:tag .
+   ```
+
+- Best practices :
+
+   > https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+   > https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
