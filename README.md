@@ -217,3 +217,8 @@ $ sudo docker-compose down -v
       ```yaml
       external: true
       ```
+
+
+## Les images construites par DOCKERFILE : build
+
+> https://docs.docker.com/engine/reference/builder/
