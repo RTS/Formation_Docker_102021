@@ -1,7 +1,8 @@
+version: "3.8"
 services:
   mynginx:
     image: nginx:1.20-alpine
-    container_name: mynginx
+    #container_name: mynginx
     volumes:
       - ./conf/default.conf:/etc/nginx/conf.d/default.conf
     networks:
@@ -11,7 +12,7 @@ services:
 
   myphp:
     image: php:7.4-pdo
-    container_name: myphp
+    #container_name: myphp
     volumes:
       - ./php/:/srv/http/
     networks:
@@ -20,7 +21,7 @@ services:
 
   mybdd:
     image: mariadb:10.5
-    container_name: mybdd
+    #container_name: mybdd
     volumes:
       - mybdd:/var/lib/mysql
     networks:
