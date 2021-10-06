@@ -236,3 +236,9 @@ $ sudo docker-compose down -v
 
    > https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
    > https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
+
+
+- Projet pour analyse vulnérabilité du contenu des images : trivy
+
+   > https://github.com/aquasecurity/trivy
+   > https://hub.docker.com/r/aquasec/trivy/
